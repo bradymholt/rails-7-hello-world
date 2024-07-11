@@ -1,6 +1,7 @@
 services:
   - type: web # A Python web service named django-app running on a free instance
     plan: free
+    region: virginia
     name: rails-7-hello-world
     runtime: ruby
     repo: https://github.com/bradymholt/rails-7-hello-world.git
