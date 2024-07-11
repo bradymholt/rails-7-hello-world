@@ -1,1 +1,13 @@
-
+services:
+  - type: web # A Python web service named django-app running on a free instance
+    plan: free
+    name: rails-7-hello-world
+    runtime: ruby
+    repo: https://github.com/bradymholt/rails-7-hello-world.git
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec rails server"
+    envVars:      
+      - key: RAILS_MASTER_KEY
+        sync: false
+      - key: WEB_CONCURRENCY
+        value: 2 # sensible default
